@@ -1,0 +1,12 @@
+com\yefeng\dto\PageInputDTO.class
+com\yefeng\dto\BgmPageInputDTO.class
+com\yefeng\pojo\User.class
+com\yefeng\pojo\UserReport.class
+com\yefeng\pojo\Bgm.class
+com\yefeng\dto\AdminUser.class
+com\yefeng\dto\LoginUser.class
+com\yefeng\pojo\UserLikeVideo.class
+com\yefeng\pojo\UserFan.class
+com\yefeng\pojo\Comment.class
+com\yefeng\pojo\SearchRecord.class
+com\yefeng\pojo\Video.class

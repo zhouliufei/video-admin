@@ -1,0 +1,8 @@
+com\yefeng\mapper\BgmMapper.class
+com\yefeng\mapper\SearchRecordMapper.class
+com\yefeng\mapper\UserReportMapper.class
+com\yefeng\mapper\CommentMapper.class
+com\yefeng\mapper\VideoMapper.class
+com\yefeng\mapper\UserMapper.class
+com\yefeng\mapper\UserFanMapper.class
+com\yefeng\mapper\UserLikeVideoMapper.class
