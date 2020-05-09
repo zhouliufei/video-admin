@@ -13,7 +13,7 @@ public interface BgmService {
     /**
      * 根据id，更新bgm行的数据
      * */
-    JsonResult updateBgmStatus(Bgm bgm);
+    JsonResult updateBgm(Bgm bgm);
     /**
      * 根据id，删除bgm数据
      * */

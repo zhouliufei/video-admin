@@ -1,4 +1,5 @@
 com\yefeng\util\TimeAgoUtils.class
+com\yefeng\util\UploadUtil.class
 com\yefeng\util\IDUtil.class
 com\yefeng\util\StringUtil.class
 com\yefeng\util\JsonResult.class

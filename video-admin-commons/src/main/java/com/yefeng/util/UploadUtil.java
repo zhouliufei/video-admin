@@ -18,14 +18,24 @@ public class UploadUtil {
             throw new Exception("文件不合法");
         }
         File uploadFilePath = new File(path + "/bgm");
-        if(uploadFilePath.exists() == false) {
+        if (uploadFilePath.exists() == false) {
             uploadFilePath.mkdirs();
         }
-        String uid = UUID.randomUUID().toString().substring(0,10).replaceAll("-","");
+        String uid = UUID.randomUUID().toString().substring(0, 10).replaceAll("-", "");
         String localUrl = path + "/bgm/" + uid + fileName;
         File actualFile = new File(localUrl);
         file.transferTo(actualFile);
         return "/bgm/" + uid + fileName;
+    }
+
+    public static String updateFile(MultipartFile file, String rootPath, String path) throws Exception {
+        deleteFile(rootPath, path);
+        return uploadBgm(file, rootPath);
+    }
+
+    public static void deleteFile(String rootPath, String path) {
+        File customFile = new File(rootPath + path);
+        customFile.deleteOnExit();
     }
 
 }

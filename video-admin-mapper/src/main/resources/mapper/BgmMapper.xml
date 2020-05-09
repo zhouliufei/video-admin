@@ -26,10 +26,9 @@
     where id = #{id,jdbcType=VARCHAR}
   </delete>
   <insert id="insert" parameterType="com.yefeng.pojo.Bgm" >
-    insert into bgm (id, author, name,
-      path)
-    values (#{id,jdbcType=VARCHAR}, #{author,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR},
-      #{path,jdbcType=VARCHAR})
+    insert into bgm (id, author, name,path,create_time,update_time,status)
+    values (#{id,jdbcType=VARCHAR}, #{author,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR},#{path,jdbcType=VARCHAR}
+    ,#{createTime,jdbcType=TIMESTAMP},#{updateTime,jdbcType=TIMESTAMP},#{status,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.yefeng.pojo.Bgm" >
     insert into bgm
@@ -46,6 +45,12 @@
       <if test="path != null" >
         path,
       </if>
+      <if test="update_time != null" >
+        update_time,
+      </if>
+      <if test="create_time != null" >
+        create_time,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -59,6 +64,12 @@
       </if>
       <if test="path != null" >
         #{path,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="create_time != null" >
+        #{createTime,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>

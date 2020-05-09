@@ -2,21 +2,14 @@ package com.yefeng.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.yefeng.dto.AdminUser;
 import com.yefeng.dto.BgmPageInputDTO;
 import com.yefeng.mapper.BgmMapper;
-import com.yefeng.mapper.UserMapper;
 import com.yefeng.pojo.Bgm;
-import com.yefeng.pojo.User;
 import com.yefeng.service.BgmService;
-import com.yefeng.service.UserService;
 import com.yefeng.util.JsonResult;
-import com.yefeng.util.MD5Util;
 import com.yefeng.util.StringUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Propagation;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
 import java.util.List;
@@ -43,7 +36,7 @@ public class BgmServiceImpl implements BgmService {
         }
     }
 
-    public JsonResult updateBgmStatus(Bgm bgm) {
+    public JsonResult updateBgm(Bgm bgm) {
         if(bgm != null) {
             try {
                 bgmMapper.updateByPrimaryKeySelective(bgm);
@@ -71,6 +64,7 @@ public class BgmServiceImpl implements BgmService {
         Bgm bgm = new Bgm();
         Date date = new Date();
         bgm.setAuthor(author);
+        bgm.setStatus(0);
         bgm.setName(name);
         bgm.setPath(filePath);
         bgm.setCreateTime(date);
